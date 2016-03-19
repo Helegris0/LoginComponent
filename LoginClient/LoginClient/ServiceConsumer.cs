@@ -19,14 +19,15 @@ namespace LoginClient {
         public bool Login(string username, string password) {
             UserAccess userAccess = new UserAccess(loginWebServiceName);
             User user = userAccess.GetUser(username, password);
+            bool validity = false;
 
             if (user != null) {
                 UserContainer.Instance.ActiveUser = user;
-                logger.LogValid();
-                return true;
+                validity = true;
             }
-            logger.LogInvalid();
-            return false;
+
+            logger.Log();
+            return validity;
         }
     }
 }

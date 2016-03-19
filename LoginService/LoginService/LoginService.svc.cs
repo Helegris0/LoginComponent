@@ -15,7 +15,7 @@ namespace LoginService {
                 .LoadList()
                 .Find(u => username.Equals(u.Username));
 
-            if (password.Equals(user.Password)) {
+            if (user != null && password.Equals(user.Password)) {
                 return user;
             }
 

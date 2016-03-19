@@ -21,6 +21,7 @@ namespace LoginClient {
                 if (new ServiceConsumer().Login(txtUsername.Text, txtPassword.Text)) {
                     this.Close();
                 } else {
+                    txtPassword.Clear();
                     MessageBox.Show("Invalid username or password.", "Login unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
