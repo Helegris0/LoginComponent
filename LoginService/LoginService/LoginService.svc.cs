@@ -12,9 +12,8 @@ namespace LoginService {
 
         public User Login(string username, string password) {
             User user = new UserTextLoader(csvPath, new FileReader())
-                .LoadUsers()
-                .Where(u => username.Equals(u.Username))
-                .First();
+                .LoadList()
+                .Find(u => username.Equals(u.Username));
 
             if (password.Equals(user.Password)) {
                 return user;

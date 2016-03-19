@@ -10,7 +10,7 @@ namespace LoginService {
             : base(fileName, contentReader) {
         }
 
-        public override List<User> LoadUsers() {
+        public override List<User> LoadList() {
             List<User> userList = new List<User>();
 
             string content = contentReader.ReadFullContent(sourcePath);

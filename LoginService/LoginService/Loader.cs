@@ -13,6 +13,6 @@ namespace LoginService {
             this.contentReader = contentReader;
         }
 
-        abstract public List<T> LoadUsers();
+        abstract public List<T> LoadList();
     }
 }
